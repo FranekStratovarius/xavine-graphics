@@ -1,7 +1,7 @@
-#include <glad/gl.h>
+#include "gl.h"
 #include <GLFW/glfw3.h> // Will drag system OpenGL headers
 //#include "scripting/lua.hpp"
-#include "graphics/shader.hpp"
+#include "shader.hpp"
 
 class Window{
 	public:

@@ -1,4 +1,4 @@
-#include "graphics/my_imgui.hpp"
+#include "my_imgui.hpp"
 
 void setup_my_imgui(const char* glsl_version, GLFWwindow* window){
 	// Setup Dear ImGui context

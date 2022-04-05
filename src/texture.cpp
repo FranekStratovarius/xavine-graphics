@@ -1,5 +1,5 @@
-#include <glad/gl.h>
-#include "graphics/texture.hpp"
+#include "gl.h"
+#include "texture.hpp"
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 

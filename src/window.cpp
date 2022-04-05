@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "graphics/window.hpp"
-#include "graphics/texture.hpp"
+#include "window.hpp"
+#include "texture.hpp"
 #include "linmath.h"
-#include "graphics/my_imgui.hpp"
+#include "my_imgui.hpp"
 
 static void glfw_error_callback(int error, const char* description){
 	fprintf(stderr, "Glfw Error %d: %s\n", error, description);
