@@ -71,7 +71,7 @@ Window::Window(bool fullscreen){
 
 	//glViewport(0, 0, width, height);
 
-	shader = new Shader("assets/shader/vertex.glsl", "assets/shader/fragment.glsl");
+	shader = new Shader("assets/shader/oldvertex.glsl", "assets/shader/oldfragment.glsl");
 
 	float vertices[] = {
 		// positions		  // colors		   // texture coords
