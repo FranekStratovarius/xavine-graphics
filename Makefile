@@ -7,10 +7,12 @@ packages: debug release
 debug:
 	xmake f -p linux -a x86_64 -m debug
 	xmake package
+	rsync --recursive --progress --delete --update include/ build/packages/x/xavine_graphics/linux/x86_64/debug/include/
 
 release:
 	xmake f -p linux -a x86_64 -m release
 	xmake package
+	rsync --recursive --progress --delete --update include/ build/packages/x/xavine_graphics/linux/x86_64/release/include/
 
 clean:
 	rm -rf build

@@ -1,4 +1,4 @@
-#include "gl.h"
+#include "glad/gl.h"
 #include <GLFW/glfw3.h> // Will drag system OpenGL headers
 //#include "scripting/lua.hpp"
 #include "shader.hpp"

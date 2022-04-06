@@ -1,7 +1,7 @@
-#include "gl.h"
+#include "glad/gl.h"
 #include "texture.hpp"
 #define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
+#include "stb/stb_image.h"
 
 unsigned int load_texture(const char* filepath){
 	unsigned int texture;
