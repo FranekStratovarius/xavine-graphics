@@ -20,10 +20,10 @@ void Sprite::draw_sprite(unsigned int texture, glm::vec2 position, glm::vec2 siz
 
 	model = glm::scale(model, glm::vec3(size, 1.0f)); // last scale
 
-	///this->shader->SetMatrix4("model", model);
+	this->shader->SetMatrix4("model", model);
 
 	// render textured quad
-	///this->shader->SetVector3f("spriteColor", color);
+	this->shader->SetVector3f("spriteColor", color);
 
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, texture);
