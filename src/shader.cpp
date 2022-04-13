@@ -112,7 +112,7 @@ void Shader::SetVector4f(const char* name, const glm::vec4 &value){
 }
 
 void Shader::SetMatrix4(const char* name, const glm::mat4 &matrix){
-	glUniformMatrix4fv(glGetUniformLocation(ID, name), 1, GL_FALSE, glm::value_ptr(matrix));
+	glUniformMatrix4fv(glGetUniformLocation(ID, name), 1, false, glm::value_ptr(matrix));
 }
 
 void Shader::checkCompileErrors(unsigned int shader, const char* type){

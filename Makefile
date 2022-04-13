@@ -1,7 +1,7 @@
 NAME:=xavine_graphics_third_party
 
 all: packages
-packages: debug release
+packages: debug
 	rsync --recursive --progress --delete --update build/packages/ ../xavine-repo/packages/
 
 debug:

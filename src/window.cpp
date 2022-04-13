@@ -21,6 +21,9 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 	// make sure the viewport matches the new window dimensions; note that width and 
 	// height will be significantly larger than specified on retina displays.
 	glViewport(0, 0, width, height);
+	Window* my_window = (Window*)glfwGetWindowUserPointer(window);
+	my_window->width = width;
+	my_window->height = height;
 }
 
 Window::Window(bool fullscreen){
@@ -60,6 +63,9 @@ Window::Window(bool fullscreen){
 		throw "could not create GLFW window";
 	}
 
+	this->width = mode->width;
+	this->height = mode->height;
+
 	glfwSetWindowUserPointer(window,this);
 
 	glfwSetKeyCallback(window,key_callback);
@@ -70,6 +76,7 @@ Window::Window(bool fullscreen){
 	glfwSwapInterval(1); // Enable vsync
 
 	//glViewport(0, 0, width, height);
+	/*
 
 	shader = new Shader("assets/shader/oldvertex.glsl", "assets/shader/oldfragment.glsl");
 
@@ -107,6 +114,7 @@ Window::Window(bool fullscreen){
 	glEnableVertexAttribArray(2);
 
 	texture = load_texture("assets/textures/container.jpg");
+	*/
 
 	setup_my_imgui(glsl_version,window);
 
@@ -124,9 +132,11 @@ Window::Window(bool fullscreen){
 }
 
 Window::~Window(){
+	/*
 	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &VBO);
 	glDeleteBuffers(1, &EBO);
+	*/
 
 	delete show_demo_window;
 	delete[] frametimes;
@@ -140,6 +150,10 @@ Window::~Window(){
 }
 
 void Window::render(){
+	this->render(nullptr, 0);
+}
+
+void Window::render(Sprite** sprites, unsigned int sprite_count){
 	for(int i=2;i<frames-1;i++){
 			frametimes[i]=frametimes[i+1];
 	}
@@ -151,12 +165,19 @@ void Window::render(){
 	glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 
+	/*
 	glBindTexture(GL_TEXTURE_2D, texture);
 
 	shader->use();
 	//draw on screen
 	glBindVertexArray(VAO);
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+	*/
+
+	for(int i = 0;i < sprite_count;i++){
+		sprites[i]->draw_sprite();
+		//fprintf(stdout,"drawing sprite %d\n", i);
+	}
 
 	render_my_imgui(frametimes, frames, show_demo_window);
 
