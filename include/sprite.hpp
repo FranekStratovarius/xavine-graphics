@@ -31,7 +31,6 @@ class Sprite{
 		unsigned int quadVAO;
 
 		unsigned int texture;
-		//glm::mat4 projection;
 		glm::vec2 position;
 		glm::vec2 size;
 		float rotation;
